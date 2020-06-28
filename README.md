@@ -6,6 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://opensource.org/licenses/MIT)
 
 A library that listens to children inside `scrollview`
+
 一个监听 `scrollview` 内部 child 的库
 
 ![Screenshot](./screenshot.gif)
@@ -23,6 +24,7 @@ widgets_visibility_provider: ^1.0.0
 ### First
 
 Use `WidgetsVisibilityProvider` to wrap `scrollview`(`CustomScrollView`, `ListView`...)
+
 使用 `WidgetsVisibilityProvider` 包裹 `scrollview`(`CustomScrollview`, `ListView`..)
 
 ```dart
@@ -44,6 +46,7 @@ WidgetsVisibilityProvider(
 ### Second
 
 Use `VisibleNotifierWidget` to wrap child widget
+
 使用 `VisibleNotifierWidget` 包裹子 widget
 
 on `ListView`:
@@ -113,10 +116,12 @@ SliverList(
 ### Maybe Third
 
 If you want to watch all widget information
+
 如果你希望一次过获取所有范围内的 widget 信息
 
 Use `WidgetsVisibilityBuilder` or `WidgetsVisibilityListener` in `WidgetsVisibilityProvider` childtree
 If you use bloc, you can also use `WidgetsVisibilityProviderBloc`
+
 在 `WidgetsVisibilityProvider` 的子 widget 使用 `WidgetsVisibilityBuilder` 或者 `WidgetsVisibilityListener`
 如果你使用 bloc，也可以使用 `WidgetsVisibilityProviderBloc`
 
