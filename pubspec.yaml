@@ -1,6 +1,6 @@
 name: widgets_visibility_provider
-description: A library that listens to children inside scrollview
-version: 1.0.0
+description: This is a library that listens to children inside scrollview.
+version: 1.0.1
 homepage: https://github.com/YeungKC/widgets_visibility_provider
 
 environment:
