@@ -14,8 +14,12 @@ A library that listens to children inside `scrollview`
 ## Getting Started
 
 ```yaml
-widgets_visibility_provider: ^1.0.0
+widgets_visibility_provider: ^1.0.2
 ```
+
+## More info
+
+[Flutter 如何在 scrollview 监听子 widget](https://yeungkc.com/flutter-how-to-listen-children-inside-scrollview/)
 
 ## How to use
 
