@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30594f9b-2359-4602-adf0-af8ba4a9efff" name="Default Changelist" comment="">
+    <list default="true" id="30594f9b-2359-4602-adf0-af8ba4a9efff" name="Default Changelist" comment="refactor: CHANGELOG.md">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,13 +64,21 @@
       <option name="project" value="LOCAL" />
       <updated>1593304236554</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactor: CHANGELOG.md">
+      <created>1593304805453</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1593304805453</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="refactor: README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: README.md" />
+    <MESSAGE value="refactor: CHANGELOG.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: CHANGELOG.md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593180644131">
@@ -94,10 +102,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1593273414510" />
-    <state x="398" y="50" key="CommitChangelistDialog2" timestamp="1593304212806">
+    <state x="398" y="50" key="CommitChangelistDialog2" timestamp="1593304908364">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="398" y="50" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1593304212806" />
+    <state x="398" y="50" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1593304908364" />
     <state width="516" height="646" key="DebuggerActiveHint" timestamp="1593283489285">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -126,10 +134,10 @@
     </state>
     <state width="1638" height="491" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1593272539870" />
     <state width="660" height="845" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1593300555733" />
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1593304239509">
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1593304807175">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1593304239509" />
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1593304807175" />
     <state x="386" y="197" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1593281512917">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
