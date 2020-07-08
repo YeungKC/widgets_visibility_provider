@@ -14,14 +14,11 @@ class WidgetsVisibilityProviderBloc extends Bloc<
     WidgetsVisibilityEvent> {
   WidgetsVisibilityProviderBloc({
     this.condition,
-  });
+  }) : super(WidgetsVisibilityFullEvent());
 
   final bool Function(PositionData positionData) condition;
 
   Map<Element, dynamic> _elementMap = <Element, dynamic>{};
-
-  @override
-  WidgetsVisibilityEvent get initialState => WidgetsVisibilityFullEvent();
 
   @override
   Stream<WidgetsVisibilityEvent> mapEventToState(

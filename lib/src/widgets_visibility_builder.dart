@@ -16,6 +16,6 @@ class WidgetsVisibilityBuilder extends StatelessWidget {
   Widget build(BuildContext context) =>
       BlocBuilder<WidgetsVisibilityProviderBloc, WidgetsVisibilityEvent>(
         builder: builder,
-        condition: condition,
+        buildWhen: condition,
       );
 }

@@ -14,7 +14,7 @@ A library that listens to children inside `scrollview`
 ## Getting Started
 
 ```yaml
-widgets_visibility_provider: ^1.0.2
+widgets_visibility_provider: ^1.0.3
 ```
 
 ## More info

@@ -21,7 +21,7 @@ class WidgetsVisibilityListener extends StatelessWidget {
   Widget build(BuildContext context) =>
       BlocListener<WidgetsVisibilityProviderBloc, WidgetsVisibilityEvent>(
         listener: listener,
-        condition: condition,
+        listenWhen: condition,
         child: child,
       );
 }
