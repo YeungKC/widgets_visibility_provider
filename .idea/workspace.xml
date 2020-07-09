@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30594f9b-2359-4602-adf0-af8ba4a9efff" name="Default Changelist" comment="refactor: version 1.0.3">
+    <list default="true" id="30594f9b-2359-4602-adf0-af8ba4a9efff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/src/widgets_visibility_consumer.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshot1.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/visible_notifier_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/visible_notifier_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/widgets_visibility_builder.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets_visibility_builder.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/widgets_visibility_listener.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets_visibility_listener.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/widgets_visibility_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets_visibility_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets_visibility_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets_visibility_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/widgetvisibilitylistener.iml" beforeDir="false" afterPath="$PROJECT_DIR$/widgetvisibilitylistener.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +44,12 @@
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/lib/src" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="main" type="FlutterRunConfigurationType" factoryName="Flutter">
@@ -109,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593310360711</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="refactor: version 1.0.3">
+      <created>1594179749786</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1594179749786</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -143,7 +158,8 @@
     <MESSAGE value="refactor: LICENSE.996ICU" />
     <MESSAGE value="refactor: version 1.0.1" />
     <MESSAGE value="refactor: version 1.0.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: version 1.0.2" />
+    <MESSAGE value="refactor: version 1.0.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: version 1.0.3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593180644131">
@@ -167,11 +183,11 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1593273414510" />
-    <state x="398" y="28" key="CommitChangelistDialog2" timestamp="1594179328927">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="398" y="50" key="CommitChangelistDialog2" timestamp="1594179745086">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="398" y="28" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1594179328927" />
-    <state x="398" y="50" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1593306060600" />
+    <state x="398" y="50" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1594179745086" />
     <state width="516" height="646" key="DebuggerActiveHint" timestamp="1593283489285">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -181,69 +197,67 @@
     </state>
     <state x="168" y="93" width="1344" height="840" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593310445732" />
     <state x="168" y="93" width="1344" height="840" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1593310454891" />
-    <state width="660" height="470" key="GridCell.Tab.0.bottom" timestamp="1593313720632">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="660" height="470" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1593313720632" />
-    <state width="660" height="845" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1593300555734" />
-    <state width="660" height="470" key="GridCell.Tab.0.center" timestamp="1593313720631">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="660" height="470" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1593313720631" />
-    <state width="660" height="845" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1593300555732" />
-    <state width="660" height="470" key="GridCell.Tab.0.left" timestamp="1593313720631">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="660" height="470" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1593313720631" />
-    <state width="660" height="845" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1593300555731" />
-    <state width="660" height="470" key="GridCell.Tab.0.right" timestamp="1593313720632">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="660" height="470" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1593313720632" />
-    <state width="660" height="845" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1593300555733" />
-    <state x="440" y="255" key="Vcs.Push.Dialog.v2" timestamp="1593310362522">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="440" y="255" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1593310362522" />
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1593306064577" />
-    <state x="386" y="197" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1593281512917">
+    <state width="424" height="818" key="GridCell.Tab.0.bottom" timestamp="1594332250739">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="386" y="197" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1680.1027@0.23.1680.1027" timestamp="1593281512917" />
-    <state x="405" y="234" width="870" height="582" key="find.popup" timestamp="1593310351227">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="660" height="470" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1593313720632" />
+    <state width="424" height="818" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1594332250739" />
+    <state width="424" height="818" key="GridCell.Tab.0.center" timestamp="1594332250738">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="660" height="470" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1593313720631" />
+    <state width="424" height="818" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1594332250738" />
+    <state width="424" height="818" key="GridCell.Tab.0.left" timestamp="1594332250738">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="660" height="470" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1593313720631" />
+    <state width="424" height="818" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1594332250738" />
+    <state width="424" height="818" key="GridCell.Tab.0.right" timestamp="1594332250739">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="660" height="470" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1593313720632" />
+    <state width="424" height="818" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1594332250739" />
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1594179753413">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="440" y="255" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1593310362522" />
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1594179753413" />
+    <state width="840" height="525" key="XDebugger.FullValuePopup" timestamp="1594242729934">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="840" height="525" key="XDebugger.FullValuePopup/0.23.1680.1027@0.23.1680.1027" timestamp="1594242729934" />
+    <state x="386" y="197" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1594242759980">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="386" y="197" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1680.1027@0.23.1680.1027" timestamp="1594242759980" />
+    <state x="405" y="252" width="870" height="582" key="find.popup" timestamp="1594332801223">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="405" y="234" width="870" height="582" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1593310351227" />
-    <state x="405" y="252" width="870" height="582" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1593294654573" />
-    <state width="300" height="80" key="javadoc.popup.new" timestamp="1593305940956">
+    <state x="405" y="252" width="870" height="582" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1594332801223" />
+    <state width="300" height="80" key="javadoc.popup.new" timestamp="1594314598139">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="300" height="81" key="javadoc.popup.new/0.0.1680.1050@0.0.1680.1050" timestamp="1593272325464" />
-    <state width="300" height="80" key="javadoc.popup.new/0.23.1680.1027@0.23.1680.1027" timestamp="1593305940956" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1593313311277">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="300" height="80" key="javadoc.popup.new/0.23.1680.1027@0.23.1680.1027" timestamp="1594314598139" />
+    <state x="505" y="251" width="670" height="662" key="search.everywhere.popup" timestamp="1594332695592">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1593313311277" />
-    <state x="505" y="251" width="670" height="662" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1593307676548" />
+    <state x="505" y="251" width="670" height="662" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1594332695592" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/example/lib/main.dart</url>
-          <line>62</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/visible_notifier_widget.dart</url>
-          <line>39</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" suspend="THREAD" type="java-exception" />
         <breakpoint enabled="true" suspend="THREAD" type="CidrExceptionBreakpoint" />
       </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="FlutterRunConfigurationType">
+        <watch expression="event.positionDataList.isEmpty" language="Dart" />
+        <watch expression="event.positionDataList.first.data" language="Dart" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

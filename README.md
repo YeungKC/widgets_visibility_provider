@@ -11,10 +11,14 @@ A library that listens to children inside `scrollview`
 
 ![Screenshot](./screenshot.gif)
 
+like Instagram show comment
+
+![Screenshot](./screenshot1.gif)
+
 ## Getting Started
 
 ```yaml
-widgets_visibility_provider: ^1.0.3
+widgets_visibility_provider: ^2.0.0
 ```
 
 ## More info
@@ -73,7 +77,7 @@ ListView.builder(
       ...
     },
     child: child(),
-    // default condition or return null condition is:
+    // default buildWhen or return null condition is:
     // 默认判断或者返回 null 情况下执行的是:
     // if (previousPositionData != currentPositionData) return true;
     // if (previousPositionData != null && currentPositionData != null)
@@ -123,28 +127,35 @@ If you want to watch all widget information
 
 如果你希望一次过获取所有范围内的 widget 信息
 
-Use `WidgetsVisibilityBuilder` or `WidgetsVisibilityListener` in `WidgetsVisibilityProvider` childtree
+Use `WidgetsVisibilityBuilder` or `WidgetsVisibilityListener` or `WidgetsVisibilityConsumer` in `WidgetsVisibilityProvider` childtree
 If you use bloc, you can also use `WidgetsVisibilityProviderBloc`
 
-在 `WidgetsVisibilityProvider` 的子 widget 使用 `WidgetsVisibilityBuilder` 或者 `WidgetsVisibilityListener`
+在 `WidgetsVisibilityProvider` 的子 widget 使用 `WidgetsVisibilityBuilder` 或者 `WidgetsVisibilityListener`或者`WidgetsVisibilityConsumer`
 如果你使用 bloc，也可以使用 `WidgetsVisibilityProviderBloc`
 
 ```dart
 WidgetsVisibilityBuilder(
   builder: (context, event) => someWidget,
-  // Of course, you can also increase the judgment condition
+  // Of course, you can also increase the judgment buildWhen
   // 当然你也可以增加条件
-  condition: (previous, current)=>...
+  buildWhen: (previous, current)=>...,
 )
 
 WidgetsVisibilityListener(
-  // Of course, you can also increase the judgment condition
+  // Of course, you can also increase the judgment listenWhen
   // 当然你也可以增加条件
-  condition: (previous, current)=>...
+  listenWhen: (previous, current)=>...,
   listener: (context, event) {
     ...
   },
   child: child,
+)
+
+WidgetsVisibilityConsumer(
+  builder: (context, event) => someWidget,
+  buildWhen: (previous, current)=>...,
+  listenWhen: (previous, current)=>...,
+  listener: (context, event) {
 )
 ```
 

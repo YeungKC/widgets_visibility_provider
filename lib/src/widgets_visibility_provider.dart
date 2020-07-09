@@ -163,7 +163,14 @@ class SenderElement extends ProxyElement {
   @override
   void mount(Element parent, dynamic newSlot) {
     super.mount(parent, newSlot);
-    (_bloc = BlocProvider.of<WidgetsVisibilityProviderBloc>(this))
+    (_bloc ??= BlocProvider.of<WidgetsVisibilityProviderBloc>(this))
+        ?._addElement(this, (widget as SenderWidget).data);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    (_bloc ??= BlocProvider.of<WidgetsVisibilityProviderBloc>(this))
         ?._addElement(this, (widget as SenderWidget).data);
   }
 

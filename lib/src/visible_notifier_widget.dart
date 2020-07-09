@@ -30,7 +30,6 @@ class VisibleNotifierWidget extends StatelessWidget {
     this.listener,
     this.builder,
   })  : assert(!(child != null && builder != null)),
-        assert(!(listener != null && builder != null)),
         super(key: key);
 
   @override
@@ -38,26 +37,16 @@ class VisibleNotifierWidget extends StatelessWidget {
     UniqueKey uniqueKey = UniqueKey();
 
     if (builder != null)
-      return WidgetsVisibilityBuilder(
-        condition:
+      return WidgetsVisibilityConsumer(
+        listenWhen:
             (WidgetsVisibilityEvent previous, WidgetsVisibilityEvent current) =>
                 _condition(previous, current, uniqueKey),
-        builder: (BuildContext context, WidgetsVisibilityEvent event) {
-          var e = (event as WidgetsVisibilityFullEvent);
-          var notification = e.notification;
-          var positionData = _getPositionData(e, uniqueKey);
-
-          var child = builder(
-            context,
-            notification,
-            positionData,
-          );
-          return SenderWidget(
-            key: uniqueKey,
-            data: data,
-            child: child,
-          );
-        },
+        buildWhen:
+            (WidgetsVisibilityEvent previous, WidgetsVisibilityEvent current) =>
+                _condition(previous, current, uniqueKey),
+        builder: (context, event) => _builder(event, uniqueKey, context),
+        listener: (BuildContext context, WidgetsVisibilityEvent event) =>
+            _listener(event, uniqueKey, context),
       );
 
     var senderWidget = SenderWidget(
@@ -68,24 +57,46 @@ class VisibleNotifierWidget extends StatelessWidget {
 
     if (listener != null)
       return WidgetsVisibilityListener(
-        condition:
+        listenWhen:
             (WidgetsVisibilityEvent previous, WidgetsVisibilityEvent current) =>
                 _condition(previous, current, uniqueKey),
-        listener: (BuildContext context, WidgetsVisibilityEvent event) {
-          var e = (event as WidgetsVisibilityFullEvent);
-          var notification = e.notification;
-          PositionData positionData = _getPositionData(e, uniqueKey);
-
-          return listener(
-            context,
-            notification,
-            positionData,
-          );
-        },
+        listener: (BuildContext context, WidgetsVisibilityEvent event) =>
+            _listener(event, uniqueKey, context),
         child: senderWidget,
       );
 
     return senderWidget;
+  }
+
+  void _listener(
+      WidgetsVisibilityEvent event, UniqueKey uniqueKey, BuildContext context) {
+    var e = (event as WidgetsVisibilityFullEvent);
+    var notification = e.notification;
+    PositionData positionData = _getPositionData(e, uniqueKey);
+
+    return listener?.call(
+      context,
+      notification,
+      positionData,
+    );
+  }
+
+  SenderWidget _builder(
+      WidgetsVisibilityEvent event, UniqueKey uniqueKey, BuildContext context) {
+    var e = (event as WidgetsVisibilityFullEvent);
+    var notification = e.notification;
+    var positionData = _getPositionData(e, uniqueKey);
+
+    var child = builder(
+      context,
+      notification,
+      positionData,
+    );
+    return SenderWidget(
+      key: uniqueKey,
+      data: data,
+      child: child,
+    );
   }
 
   PositionData _getPositionData(
