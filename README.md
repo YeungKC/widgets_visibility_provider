@@ -18,12 +18,13 @@ like Instagram show comment
 ## Getting Started
 
 ```yaml
-widgets_visibility_provider: ^2.0.0
+widgets_visibility_provider: ^2.0.1
 ```
 
 ## More info
 
 [Flutter 如何在 scrollview 监听子 widget](https://yeungkc.com/flutter-how-to-listen-children-inside-scrollview/)
+[Flutter 实现类似 ins 的显示评论框效果](https://yeungkc.com/widgets_visibility_provider_ins_screenshot/)
 
 ## How to use
 

@@ -1,3 +1,7 @@
+## [2.0.1]
+
+* change README.md 
+
 ## [2.0.0]
 
 * change condition to buildWhen or listenWhen
