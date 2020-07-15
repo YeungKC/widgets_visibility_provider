@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30594f9b-2359-4602-adf0-af8ba4a9efff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+    <list default="true" id="30594f9b-2359-4602-adf0-af8ba4a9efff" name="Default Changelist" comment="refactor: .gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +126,21 @@
       <option name="project" value="LOCAL" />
       <updated>1594340043778</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="refactor: README.md">
+      <created>1594503521792</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1594503521792</updated>
+    </task>
+    <task id="LOCAL-00012" summary="refactor: .gitignore">
+      <created>1594854954819</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1594854954820</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -159,16 +168,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <MESSAGE value="refactor: README.md" />
     <MESSAGE value="refactor: CHANGELOG.md" />
-    <MESSAGE value="refactor: .gitignore" />
     <MESSAGE value="refactor: LICENSE.996ICU" />
     <MESSAGE value="refactor: version 1.0.1" />
     <MESSAGE value="refactor: version 1.0.2" />
     <MESSAGE value="refactor: version 1.0.3" />
     <MESSAGE value="refactor: version 2.0" />
     <MESSAGE value="refactor: version 2.0.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: version 2.0.1" />
+    <MESSAGE value="refactor: README.md" />
+    <MESSAGE value="refactor: .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: .gitignore" />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593180644131">
@@ -179,10 +188,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="534" y="336" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.1027@0.23.1680.1027" timestamp="1593303814715" />
-    <state x="653" y="266" key="#com.intellij.ide.util.MemberChooser" timestamp="1593280685874">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1594797951751">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1593271947202" />
+    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1594797951751" />
     <state x="653" y="266" key="#com.intellij.ide.util.MemberChooser/0.23.1680.1027@0.23.1680.1027" timestamp="1593280685874" />
     <state x="577" y="322" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1593180642261">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -192,19 +201,19 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1593273414510" />
-    <state x="398" y="50" key="CommitChangelistDialog2" timestamp="1594340038778">
+    <state x="398" y="50" key="CommitChangelistDialog2" timestamp="1594855015200">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="398" y="28" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1594179328927" />
-    <state x="398" y="50" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1594340038778" />
+    <state x="398" y="28" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1594854966009" />
+    <state x="398" y="50" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1594855015200" />
     <state width="516" height="646" key="DebuggerActiveHint" timestamp="1593283489285">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="516" height="646" key="DebuggerActiveHint/0.23.1680.1027@0.23.1680.1027" timestamp="1593283489285" />
-    <state x="168" y="93" width="1344" height="840" key="DiffContextDialog" timestamp="1593310454891">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="168" y="93" width="1344" height="840" key="DiffContextDialog" timestamp="1594854899547">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="168" y="93" width="1344" height="840" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1593310445732" />
+    <state x="168" y="93" width="1344" height="840" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1594854899547" />
     <state x="168" y="93" width="1344" height="840" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1593310454891" />
     <state width="424" height="554" key="GridCell.Tab.0.bottom" timestamp="1594348305355">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -230,11 +239,11 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="341" y="175" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1594350254195" />
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1594340045854">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="440" y="255" key="Vcs.Push.Dialog.v2" timestamp="1594854970148">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="255" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1593310362522" />
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1594340045854" />
+    <state x="440" y="255" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1594854970148" />
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1594503523811" />
     <state width="840" height="525" key="XDebugger.FullValuePopup" timestamp="1594242729934">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -243,10 +252,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="386" y="197" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1680.1027@0.23.1680.1027" timestamp="1594242759980" />
-    <state x="405" y="252" width="870" height="582" key="find.popup" timestamp="1594332801223">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="405" y="234" width="870" height="582" key="find.popup" timestamp="1594854843789">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="405" y="234" width="870" height="582" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1593310351227" />
+    <state x="405" y="234" width="870" height="582" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1594854843789" />
     <state x="405" y="252" width="870" height="582" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1594332801223" />
     <state width="300" height="80" key="javadoc.popup.new" timestamp="1594502619404">
       <screen x="0" y="23" width="1680" height="1027" />
