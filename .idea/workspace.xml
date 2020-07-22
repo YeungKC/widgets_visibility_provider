@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30594f9b-2359-4602-adf0-af8ba4a9efff" name="Default Changelist" comment="refactor: .gitignore">
+    <list default="true" id="30594f9b-2359-4602-adf0-af8ba4a9efff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/analysis_options.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/visible_notifier_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/visible_notifier_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/widgets_visibility_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets_visibility_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgetvisibilitylistener.iml" beforeDir="false" afterPath="$PROJECT_DIR$/widgetvisibilitylistener.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594854954820</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="refactor: * update dependencies &#10;          * add const constructor">
+      <created>1595444558622</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1595444558622</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -185,7 +193,8 @@
     <MESSAGE value="refactor: version 2.0.1" />
     <MESSAGE value="refactor: README.md" />
     <MESSAGE value="refactor: .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: .gitignore" />
+    <MESSAGE value="refactor: * update dependencies &#10;          * add const constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: * update dependencies &#10;          * add const constructor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593180644131">
@@ -209,10 +218,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="528" y="271" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1593273414510" />
-    <state x="398" y="28" key="CommitChangelistDialog2" timestamp="1595444546209">
+    <state x="398" y="28" key="CommitChangelistDialog2" timestamp="1595444558467">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="398" y="28" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1595444546209" />
+    <state x="398" y="28" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1595444558467" />
     <state x="398" y="50" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1594855015200" />
     <state width="516" height="646" key="DebuggerActiveHint" timestamp="1593283489285">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -223,34 +232,34 @@
     </state>
     <state x="168" y="93" width="1344" height="840" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1594854899547" />
     <state x="168" y="93" width="1344" height="840" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1593310454891" />
-    <state width="759" height="890" key="GridCell.Tab.0.bottom" timestamp="1594855210143">
+    <state width="759" height="472" key="GridCell.Tab.0.bottom" timestamp="1595444704534">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="759" height="890" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1594855210143" />
+    <state width="759" height="472" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1595444704534" />
     <state width="424" height="554" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1594348305355" />
-    <state width="759" height="890" key="GridCell.Tab.0.center" timestamp="1594855210141">
+    <state width="759" height="472" key="GridCell.Tab.0.center" timestamp="1595444704532">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="759" height="890" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1594855210141" />
+    <state width="759" height="472" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1595444704532" />
     <state width="424" height="554" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1594348305353" />
-    <state width="759" height="890" key="GridCell.Tab.0.left" timestamp="1594855210140">
+    <state width="759" height="472" key="GridCell.Tab.0.left" timestamp="1595444704531">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="759" height="890" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1594855210140" />
+    <state width="759" height="472" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1595444704531" />
     <state width="424" height="554" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1594348305352" />
-    <state width="759" height="890" key="GridCell.Tab.0.right" timestamp="1594855210142">
+    <state width="759" height="472" key="GridCell.Tab.0.right" timestamp="1595444704533">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="759" height="890" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1594855210142" />
+    <state width="759" height="472" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1595444704533" />
     <state width="424" height="554" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1594348305354" />
     <state x="341" y="175" key="SettingsEditor" timestamp="1594350254195">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="341" y="175" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1594350254195" />
-    <state x="440" y="255" key="Vcs.Push.Dialog.v2" timestamp="1594854970148">
+    <state x="440" y="255" key="Vcs.Push.Dialog.v2" timestamp="1595444560614">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="255" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1594854970148" />
+    <state x="440" y="255" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1595444560614" />
     <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1594503523811" />
     <state width="840" height="525" key="XDebugger.FullValuePopup" timestamp="1594242729934">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -270,11 +279,11 @@
     </state>
     <state width="300" height="81" key="javadoc.popup.new/0.0.1680.1050@0.0.1680.1050" timestamp="1593272325464" />
     <state width="300" height="80" key="javadoc.popup.new/0.23.1680.1027@0.23.1680.1027" timestamp="1594502619404" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1595444231624">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="505" y="251" width="670" height="662" key="search.everywhere.popup" timestamp="1595448462713">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1595444231624" />
-    <state x="505" y="251" width="670" height="662" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1594349693729" />
+    <state x="505" y="251" width="670" height="662" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1595448462713" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

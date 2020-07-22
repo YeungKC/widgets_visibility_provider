@@ -98,6 +98,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "pedantic",
+      "rootUri": "file:///Users/YeungKC/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.9.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "provider",
       "rootUri": "file:///Users/YeungKC/flutter/.pub-cache/hosted/pub.dartlang.org/provider-4.1.3",
       "packageUri": "lib/",
@@ -164,7 +170,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-07-22T18:57:21.883088Z",
+  "generated": "2020-07-22T20:08:11.026863Z",
   "generator": "pub",
   "generatorVersion": "2.9.0-21.0.dev.flutter-20bf2fcf56"
 }

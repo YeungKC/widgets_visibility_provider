@@ -18,14 +18,13 @@ class WidgetsVisibilityProviderBloc extends Bloc<
 
   final bool Function(PositionData positionData) condition;
 
-  Map<Element, dynamic> _elementMap = <Element, dynamic>{};
+  final Map<Element, dynamic> _elementMap = <Element, dynamic>{};
 
   @override
   Stream<WidgetsVisibilityEvent> mapEventToState(
       MapEntry<ScrollNotification, Iterable<MapEntry<Key, PositionData>>>
           mapEntry) async* {
-    LinkedHashMap<Key, PositionData> positionDataMap =
-        LinkedHashMap.fromEntries(
+    var positionDataMap = LinkedHashMap.fromEntries(
       mapEntry.value.toList()
         ..sort(
           (a, b) => a.value.startPosition.compareTo(b.value.startPosition),
@@ -39,13 +38,13 @@ class WidgetsVisibilityProviderBloc extends Bloc<
   }
 
   @mustCallSuper
-  _addElement(SenderElement element, dynamic data) {
+  void _addElement(SenderElement element, dynamic data) {
     _elementMap[element] = data;
     _schedulePositionUpdate();
   }
 
   @mustCallSuper
-  _removeElement(SenderElement element) {
+  void _removeElement(SenderElement element) {
     _elementMap.remove(element);
     _schedulePositionUpdate();
   }
@@ -65,9 +64,8 @@ class WidgetsVisibilityProviderBloc extends Bloc<
           if (_elementMap == null || _elementMap.isEmpty) return;
           RenderViewport viewport;
 
-          Iterable<MapEntry<Key, PositionData>> iterable =
-              _elementMap.entries.map((e) {
-            Element element = e.key;
+          var iterable = _elementMap.entries.map((e) {
+            var element = e.key;
             dynamic value = e.value;
 
             if (element == null || element.dirty) return null;
@@ -76,12 +74,11 @@ class WidgetsVisibilityProviderBloc extends Bloc<
               final RenderBox box = element.renderObject;
               viewport ??= RenderAbstractViewport.of(box);
 
-              RevealedOffset offsetToReveal =
-                  viewport.getOffsetToReveal(box, 0);
-              final double reveal = offsetToReveal.offset;
-              double start = reveal - viewport.offset.pixels;
+              var offsetToReveal = viewport.getOffsetToReveal(box, 0);
+              final reveal = offsetToReveal.offset;
+              var start = reveal - viewport.offset.pixels;
 
-              bool vertical = viewport.axis == Axis.vertical;
+              var vertical = viewport.axis == Axis.vertical;
               var itemSize = vertical
                   ? offsetToReveal.rect.size.height
                   : offsetToReveal.rect.size.width;
@@ -109,7 +106,7 @@ class WidgetsVisibilityProviderBloc extends Bloc<
                     mapEntry.value.startPosition < mapEntry.value.viewportSize;
           });
 
-          this?.add(MapEntry(_lastNotification, iterable));
+          add(MapEntry(_lastNotification, iterable));
 
           _updateScheduling = false;
           if (_waitUpdateScheduled) _schedulePositionUpdate();
@@ -212,6 +209,7 @@ class WidgetsVisibilityEvent extends Equatable {
         positionDataList,
       ];
 
+  @override
   bool get stringify => true;
 }
 

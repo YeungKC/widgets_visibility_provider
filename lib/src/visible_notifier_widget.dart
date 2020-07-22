@@ -34,9 +34,9 @@ class VisibleNotifierWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    UniqueKey uniqueKey = UniqueKey();
+    var uniqueKey = UniqueKey();
 
-    if (builder != null)
+    if (builder != null) {
       return WidgetsVisibilityConsumer(
         listenWhen:
             (WidgetsVisibilityEvent previous, WidgetsVisibilityEvent current) =>
@@ -48,6 +48,7 @@ class VisibleNotifierWidget extends StatelessWidget {
         listener: (BuildContext context, WidgetsVisibilityEvent event) =>
             _listener(event, uniqueKey, context),
       );
+    }
 
     var senderWidget = SenderWidget(
       key: uniqueKey,
@@ -55,7 +56,7 @@ class VisibleNotifierWidget extends StatelessWidget {
       data: data,
     );
 
-    if (listener != null)
+    if (listener != null) {
       return WidgetsVisibilityListener(
         listenWhen:
             (WidgetsVisibilityEvent previous, WidgetsVisibilityEvent current) =>
@@ -64,6 +65,7 @@ class VisibleNotifierWidget extends StatelessWidget {
             _listener(event, uniqueKey, context),
         child: senderWidget,
       );
+    }
 
     return senderWidget;
   }
@@ -72,7 +74,7 @@ class VisibleNotifierWidget extends StatelessWidget {
       WidgetsVisibilityEvent event, UniqueKey uniqueKey, BuildContext context) {
     var e = (event as WidgetsVisibilityFullEvent);
     var notification = e.notification;
-    PositionData positionData = _getPositionData(e, uniqueKey);
+    var positionData = _getPositionData(e, uniqueKey);
 
     return listener?.call(
       context,
@@ -110,8 +112,8 @@ class VisibleNotifierWidget extends StatelessWidget {
     return null;
   }
 
-  _condition(WidgetsVisibilityEvent previous, WidgetsVisibilityEvent current,
-      Key uniqueKey) {
+  bool _condition(WidgetsVisibilityEvent previous,
+      WidgetsVisibilityEvent current, Key uniqueKey) {
     var p = (previous as WidgetsVisibilityFullEvent);
     var c = (current as WidgetsVisibilityFullEvent);
 
@@ -127,7 +129,7 @@ class VisibleNotifierWidget extends StatelessWidget {
             currentNotification, currentPositionData);
   }
 
-  _defaultCondition(
+  bool _defaultCondition(
     ScrollNotification previousNotification,
     PositionData previousPositionData,
     ScrollNotification currentNotification,
@@ -135,8 +137,9 @@ class VisibleNotifierWidget extends StatelessWidget {
   ) {
     if (previousPositionData != currentPositionData) return true;
 
-    if (previousPositionData != null && currentPositionData != null)
+    if (previousPositionData != null && currentPositionData != null) {
       return previousNotification != currentNotification;
+    }
 
     return false;
   }
