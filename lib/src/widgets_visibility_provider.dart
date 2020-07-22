@@ -14,7 +14,7 @@ class WidgetsVisibilityProviderBloc extends Bloc<
     WidgetsVisibilityEvent> {
   WidgetsVisibilityProviderBloc({
     this.condition,
-  }) : super(WidgetsVisibilityFullEvent());
+  }) : super(const WidgetsVisibilityFullEvent());
 
   final bool Function(PositionData positionData) condition;
 
@@ -184,7 +184,7 @@ class SenderElement extends ProxyElement {
 class WidgetsVisibilityFullEvent extends WidgetsVisibilityEvent {
   final Map<Key, PositionData> positionDataMap;
 
-  WidgetsVisibilityFullEvent({
+  const WidgetsVisibilityFullEvent({
     ScrollNotification notification,
     List<PositionData> positionDataList = const [],
     this.positionDataMap = const {},
@@ -202,7 +202,7 @@ class WidgetsVisibilityEvent extends Equatable {
   final ScrollNotification notification;
   final List<PositionData> positionDataList;
 
-  WidgetsVisibilityEvent({
+  const WidgetsVisibilityEvent({
     this.notification,
     this.positionDataList,
   });

@@ -18,7 +18,7 @@ like Instagram show comment
 ## Getting Started
 
 ```yaml
-widgets_visibility_provider: ^2.0.1
+widgets_visibility_provider: ^2.0.2
 ```
 
 ## More info

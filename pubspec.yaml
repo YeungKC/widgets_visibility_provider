@@ -1,6 +1,6 @@
 name: widgets_visibility_provider
 description: This is a library that listens to children inside scrollview.
-version: 2.0.1
+version: 2.0.2
 homepage: https://github.com/YeungKC/widgets_visibility_provider
 
 environment:
@@ -9,9 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  bloc: ^5.0.1
-  flutter_bloc: ^5.0.1
-  equatable: ^1.2.0
+  bloc: ^6.0.0
+  flutter_bloc: ^6.0.1
+  equatable: ^1.2.2
 
 dev_dependencies:
   flutter_test:

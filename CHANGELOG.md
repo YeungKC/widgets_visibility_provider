@@ -1,6 +1,12 @@
+## [2.0.2]
+
+* update dependencies 
+* add const constructor
+
 ## [2.0.1]
 
 * change README.md 
+
 
 ## [2.0.0]
 
