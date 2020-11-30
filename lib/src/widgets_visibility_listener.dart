@@ -4,11 +4,8 @@ import 'package:widgets_visibility_provider/widgets_visibility_provider.dart';
 
 class WidgetsVisibilityListener extends StatelessWidget {
   final Widget child;
-  final void Function(BuildContext context, WidgetsVisibilityEvent event)
-      listener;
-  final bool Function(
-          WidgetsVisibilityEvent previous, WidgetsVisibilityEvent current)
-      listenWhen;
+  final BlocWidgetListener<WidgetsVisibilityEvent> listener;
+  final BlocListenerCondition<WidgetsVisibilityEvent> listenWhen;
 
   const WidgetsVisibilityListener({
     Key key,

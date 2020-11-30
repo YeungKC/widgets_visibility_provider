@@ -52,6 +52,7 @@ class WidgetsVisibilityProviderBloc extends Bloc<
   bool _updateScheduling = false;
   bool _waitUpdateScheduled = false;
   ScrollNotification _lastNotification;
+
   void _schedulePositionUpdate([ScrollNotification notification]) {
     _lastNotification = notification ?? _lastNotification;
 
@@ -89,13 +90,14 @@ class WidgetsVisibilityProviderBloc extends Bloc<
               var end = start + itemSize;
 
               return MapEntry(
-                  element?.widget?.key,
-                  PositionData(
-                    startPosition: start,
-                    endPosition: end,
-                    viewportSize: viewportSize,
-                    data: value,
-                  ));
+                element?.widget?.key,
+                PositionData(
+                  startPosition: start,
+                  endPosition: end,
+                  viewportSize: viewportSize,
+                  data: value,
+                ),
+              );
             } catch (_) {}
 
             return null;
@@ -153,6 +155,7 @@ class SenderElement extends ProxyElement {
   void notifyClients(ProxyWidget oldWidget) {}
 
   RenderViewport get viewport => RenderAbstractViewport.of(renderObject);
+
   RenderBox get renderBox => renderObject;
 
   WidgetsVisibilityProviderBloc _bloc;
@@ -203,6 +206,7 @@ class WidgetsVisibilityEvent extends Equatable {
     this.notification,
     this.positionDataList,
   });
+
   @override
   List<Object> get props => [
         notification,

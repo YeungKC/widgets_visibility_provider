@@ -3,16 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widgets_visibility_provider/widgets_visibility_provider.dart';
 
 class WidgetsVisibilityConsumer extends StatelessWidget {
-  final bool Function(
-          WidgetsVisibilityEvent previous, WidgetsVisibilityEvent current)
-      buildWhen;
-  final Widget Function(BuildContext context, WidgetsVisibilityEvent event)
-      builder;
-  final void Function(BuildContext context, WidgetsVisibilityEvent event)
-      listener;
-  final bool Function(
-          WidgetsVisibilityEvent previous, WidgetsVisibilityEvent current)
-      listenWhen;
+  final BlocBuilderCondition<WidgetsVisibilityEvent> buildWhen;
+  final BlocWidgetBuilder<WidgetsVisibilityEvent> builder;
+  final BlocWidgetListener<WidgetsVisibilityEvent> listener;
+  final BlocListenerCondition<WidgetsVisibilityEvent> listenWhen;
 
   const WidgetsVisibilityConsumer({
     Key key,
