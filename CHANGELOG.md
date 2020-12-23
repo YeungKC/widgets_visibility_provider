@@ -1,11 +1,16 @@
+## [3.0.0-nullsafety.0]
+
+* update dependencies
+* support null safety
+
 ## [2.0.2]
 
-* update dependencies 
+* update dependencies
 * add const constructor
 
 ## [2.0.1]
 
-* change README.md 
+* change README.md
 
 
 ## [2.0.0]
@@ -16,15 +21,15 @@
 
 ## [1.0.3]
 
-* update bloc 
+* update bloc
 
 ## [1.0.2]
 
-* change README.md 
+* change README.md
 
 ## [1.0.1]
 
-* change description 
+* change description
 
 ## [1.0.0]
 
