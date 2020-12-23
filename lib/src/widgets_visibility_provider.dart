@@ -10,19 +10,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widgets_visibility_provider/src/visible_notifier_widget.dart';
 
 class WidgetsVisibilityProviderBloc extends Bloc<
-    MapEntry<ScrollNotification, Iterable<MapEntry<Key, PositionData>>>,
+    MapEntry<ScrollNotification?, Iterable<MapEntry<Key, PositionData>>>,
     WidgetsVisibilityEvent> {
   WidgetsVisibilityProviderBloc({
     this.condition,
   }) : super(const WidgetsVisibilityFullEvent());
 
-  final bool Function(PositionData positionData) condition;
-
+  final bool Function(PositionData positionData)? condition;
   final Map<Element, dynamic> _elementMap = <Element, dynamic>{};
+
+  bool _updateScheduling = false;
+  bool _waitUpdateScheduled = false;
+  ScrollNotification? _lastNotification;
 
   @override
   Stream<WidgetsVisibilityEvent> mapEventToState(
-      MapEntry<ScrollNotification, Iterable<MapEntry<Key, PositionData>>>
+      MapEntry<ScrollNotification?, Iterable<MapEntry<Key, PositionData>>>
           mapEntry) async* {
     var positionDataMap = LinkedHashMap.fromEntries(
       mapEntry.value.toList()
@@ -49,48 +52,51 @@ class WidgetsVisibilityProviderBloc extends Bloc<
     _schedulePositionUpdate();
   }
 
-  bool _updateScheduling = false;
-  bool _waitUpdateScheduled = false;
-  ScrollNotification _lastNotification;
-
-  void _schedulePositionUpdate([ScrollNotification notification]) {
+  void _schedulePositionUpdate([ScrollNotification? notification]) {
     _lastNotification = notification ?? _lastNotification;
 
     _waitUpdateScheduled = true;
     if (!_updateScheduling) {
       _updateScheduling = true;
       _waitUpdateScheduled = false;
-      SchedulerBinding.instance.addPostFrameCallback(
+      SchedulerBinding.instance!.addPostFrameCallback(
         (_) {
-          if (_elementMap == null || _elementMap.isEmpty) return;
-          RenderViewport viewport;
+          if (_elementMap.isEmpty) return;
+          RenderViewport? viewport;
 
           var iterable = _elementMap.entries.map((e) {
             var element = e.key;
             dynamic value = e.value;
 
-            if (element == null || element.dirty) return null;
+            if (element.dirty) return null;
 
             try {
-              final RenderBox box = element.renderObject;
-              viewport ??= RenderAbstractViewport.of(box);
+              var renderObject = element.renderObject;
+              assert(renderObject != null);
+              assert(renderObject is RenderBox);
+              final box = renderObject as RenderBox;
+              var renderAbstractViewport = RenderAbstractViewport.of(box);
+              assert(renderAbstractViewport != null);
+              assert(renderAbstractViewport is RenderViewport);
+              viewport ??= renderAbstractViewport as RenderViewport;
+              assert(viewport != null);
 
-              var offsetToReveal = viewport.getOffsetToReveal(box, 0);
+              var offsetToReveal = viewport!.getOffsetToReveal(box, 0);
               final reveal = offsetToReveal.offset;
-              var start = reveal - viewport.offset.pixels;
+              var start = reveal - viewport!.offset.pixels;
 
-              var vertical = viewport.axis == Axis.vertical;
+              var vertical = viewport!.axis == Axis.vertical;
               var itemSize = vertical
                   ? offsetToReveal.rect.size.height
                   : offsetToReveal.rect.size.width;
 
               var viewportSize =
-                  vertical ? viewport.size.height : viewport.size.width;
+                  vertical ? viewport!.size.height : viewport!.size.width;
 
               var end = start + itemSize;
 
               return MapEntry(
-                element?.widget?.key,
+                element.widget.key,
                 PositionData(
                   startPosition: start,
                   endPosition: end,
@@ -108,7 +114,8 @@ class WidgetsVisibilityProviderBloc extends Bloc<
                     mapEntry.value.startPosition < mapEntry.value.viewportSize;
           });
 
-          add(MapEntry(_lastNotification, iterable));
+          add(MapEntry(_lastNotification,
+              iterable as Iterable<MapEntry<Key, PositionData>>));
 
           _updateScheduling = false;
           if (_waitUpdateScheduled) _schedulePositionUpdate();
@@ -119,13 +126,13 @@ class WidgetsVisibilityProviderBloc extends Bloc<
 }
 
 class WidgetsVisibilityProvider extends StatelessWidget {
-  final bool Function(PositionData positionData) condition;
+  final bool Function(PositionData positionData)? condition;
   final Widget child;
 
   const WidgetsVisibilityProvider({
-    Key key,
+    Key? key,
     this.condition,
-    this.child,
+    required this.child,
   }) : super(key: key);
 
   @override
@@ -154,24 +161,25 @@ class SenderElement extends ProxyElement {
   @override
   void notifyClients(ProxyWidget oldWidget) {}
 
-  RenderViewport get viewport => RenderAbstractViewport.of(renderObject);
+  RenderViewport? get viewport =>
+      RenderAbstractViewport.of(renderObject) as RenderViewport?;
 
-  RenderBox get renderBox => renderObject;
+  RenderBox? get renderBox => renderObject as RenderBox?;
 
-  WidgetsVisibilityProviderBloc _bloc;
+  WidgetsVisibilityProviderBloc? _bloc;
 
   @override
-  void mount(Element parent, dynamic newSlot) {
+  void mount(Element? parent, dynamic newSlot) {
     super.mount(parent, newSlot);
     (_bloc ??= BlocProvider.of<WidgetsVisibilityProviderBloc>(this))
-        ?._addElement(this, (widget as SenderWidget).data);
+        ._addElement(this, (widget as SenderWidget).data);
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     (_bloc ??= BlocProvider.of<WidgetsVisibilityProviderBloc>(this))
-        ?._addElement(this, (widget as SenderWidget).data);
+        ._addElement(this, (widget as SenderWidget).data);
   }
 
   @override
@@ -185,13 +193,13 @@ class WidgetsVisibilityFullEvent extends WidgetsVisibilityEvent {
   final Map<Key, PositionData> positionDataMap;
 
   const WidgetsVisibilityFullEvent({
-    ScrollNotification notification,
+    ScrollNotification? notification,
     List<PositionData> positionDataList = const [],
     this.positionDataMap = const {},
   }) : super(notification: notification, positionDataList: positionDataList);
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         notification,
         positionDataList,
         positionDataMap,
@@ -199,22 +207,22 @@ class WidgetsVisibilityFullEvent extends WidgetsVisibilityEvent {
 }
 
 class WidgetsVisibilityEvent extends Equatable {
-  final ScrollNotification notification;
+  final ScrollNotification? notification;
   final List<PositionData> positionDataList;
 
   const WidgetsVisibilityEvent({
     this.notification,
-    this.positionDataList,
+    required this.positionDataList,
   });
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         notification,
         positionDataList,
       ];
 
   @override
-  bool get stringify => true;
+  bool? get stringify => true;
 }
 
 class PositionData extends Equatable {
@@ -224,10 +232,10 @@ class PositionData extends Equatable {
   final dynamic data;
 
   PositionData({
-    @required this.startPosition,
-    @required this.endPosition,
-    @required this.viewportSize,
-    @required this.data,
+    required this.startPosition,
+    required this.endPosition,
+    required this.viewportSize,
+    required this.data,
   });
 
   @override

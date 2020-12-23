@@ -3,27 +3,27 @@ import 'package:widgets_visibility_provider/src/widgets_visibility_provider.dart
 import 'package:widgets_visibility_provider/widgets_visibility_provider.dart';
 
 class VisibleNotifierWidget extends StatelessWidget {
-  final Widget child;
+  final Widget? child;
   final dynamic data;
   final bool Function(
-    ScrollNotification previousNotification,
-    PositionData previousPositionData,
-    ScrollNotification currentNotification,
-    PositionData currentPositionData,
-  ) condition;
+    ScrollNotification? previousNotification,
+    PositionData? previousPositionData,
+    ScrollNotification? currentNotification,
+    PositionData? currentPositionData,
+  )? condition;
   final void Function(
     BuildContext context,
-    ScrollNotification notification,
-    PositionData positionData,
-  ) listener;
+    ScrollNotification? notification,
+    PositionData? positionData,
+  )? listener;
   final Widget Function(
     BuildContext context,
-    ScrollNotification notification,
-    PositionData positionData,
-  ) builder;
+    ScrollNotification? notification,
+    PositionData? positionData,
+  )? builder;
 
   const VisibleNotifierWidget({
-    Key key,
+    Key? key,
     this.data,
     this.child,
     this.condition,
@@ -52,7 +52,7 @@ class VisibleNotifierWidget extends StatelessWidget {
 
     var senderWidget = SenderWidget(
       key: uniqueKey,
-      child: child,
+      child: child!,
       data: data,
     );
 
@@ -89,7 +89,8 @@ class VisibleNotifierWidget extends StatelessWidget {
     var notification = e.notification;
     var positionData = _getPositionData(e, uniqueKey);
 
-    var child = builder(
+    assert(builder != null);
+    var child = builder!(
       context,
       notification,
       positionData,
@@ -101,12 +102,12 @@ class VisibleNotifierWidget extends StatelessWidget {
     );
   }
 
-  PositionData _getPositionData(
+  PositionData? _getPositionData(
       WidgetsVisibilityFullEvent e, UniqueKey uniqueKey) {
     try {
       return e.positionDataMap.entries
           .firstWhere((mapEntry) => mapEntry.key == uniqueKey)
-          ?.value;
+          .value;
     } catch (_) {}
 
     return null;
@@ -130,10 +131,10 @@ class VisibleNotifierWidget extends StatelessWidget {
   }
 
   bool _defaultCondition(
-    ScrollNotification previousNotification,
-    PositionData previousPositionData,
-    ScrollNotification currentNotification,
-    PositionData currentPositionData,
+    ScrollNotification? previousNotification,
+    PositionData? previousPositionData,
+    ScrollNotification? currentNotification,
+    PositionData? currentPositionData,
   ) {
     if (previousPositionData != currentPositionData) return true;
 
@@ -147,12 +148,10 @@ class VisibleNotifierWidget extends StatelessWidget {
 
 class SenderWidget extends ProxyWidget {
   const SenderWidget({
-    @required Key key,
-    @required Widget child,
+    required Key key,
+    required Widget child,
     this.data,
-  })  : assert(key != null),
-        assert(child != null),
-        super(key: key, child: child);
+  }) : super(key: key, child: child);
 
   final dynamic data;
 

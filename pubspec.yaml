@@ -4,14 +4,14 @@ version: 2.0.2
 homepage: https://github.com/YeungKC/widgets_visibility_provider
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0-0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  bloc: ^6.1.0
-  flutter_bloc: ^6.1.1
-  equatable: ^1.2.5
+  bloc: ^7.0.0-nullsafety.0
+  flutter_bloc: ^7.0.0-nullsafety.0
+  equatable: ^2.0.0-nullsafety.0
 
 dev_dependencies:
   flutter_test:
