@@ -1,3 +1,7 @@
+## [3.0.1]
+
+* update dependencies
+
 ## [3.0.0-nullsafety.0]
 
 * update dependencies
