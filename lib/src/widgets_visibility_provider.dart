@@ -107,15 +107,17 @@ class WidgetsVisibilityProviderBloc extends Bloc<
             } catch (_) {}
 
             return null;
-          }).where((mapEntry) {
-            if (mapEntry == null || mapEntry.key == null) return false;
-            return condition?.call(mapEntry.value) ??
-                mapEntry.value.endPosition > 0 &&
-                    mapEntry.value.startPosition < mapEntry.value.viewportSize;
+          }).expand<MapEntry<Key, PositionData>>((mapEntry) {
+            if (mapEntry == null || mapEntry.key == null) return const [];
+            final value = mapEntry.value;
+            return condition?.call(value) ??
+                    value.endPosition > 0 &&
+                        value.startPosition < value.viewportSize
+                ? [MapEntry(mapEntry.key!, value)]
+                : const [];
           });
 
-          add(MapEntry(_lastNotification,
-              iterable as Iterable<MapEntry<Key, PositionData>>));
+          add(MapEntry(_lastNotification, iterable));
 
           _updateScheduling = false;
           if (_waitUpdateScheduled) _schedulePositionUpdate();
