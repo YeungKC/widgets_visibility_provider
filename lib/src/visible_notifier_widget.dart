@@ -52,8 +52,8 @@ class VisibleNotifierWidget extends StatelessWidget {
 
     var senderWidget = SenderWidget(
       key: uniqueKey,
-      child: child!,
       data: data,
+      child: child!,
     );
 
     if (listener != null) {

@@ -28,12 +28,12 @@ class List extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        RaisedButton(
+        ElevatedButton(
           child: Text('Monitor Children'),
           onPressed: () => Navigator.of(context)
               .push(MaterialPageRoute(builder: (_) => MonitorChildren())),
         ),
-        RaisedButton(
+        ElevatedButton(
           child: Text('Instagram show comment'),
           onPressed: () => Navigator.of(context)
               .push(MaterialPageRoute(builder: (_) => InstagramShowComment())),
